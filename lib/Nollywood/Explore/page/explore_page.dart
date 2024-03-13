@@ -1,5 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:nollywood_actor_app/Nollywood/Explore/widgets/explore_actor_button.dart';
+import 'package:nollywood_actor_app/Nollywood/Explore/widgets/explore_producer_btn.dart';
+import 'package:nollywood_actor_app/Nollywood/Explore/widgets/nolly_icon.dart';
+import 'package:nollywood_actor_app/Nollywood/Explore/widgets/nolly_info.dart';
 
 class ExplorePage extends StatelessWidget {
   const ExplorePage({super.key});
@@ -11,27 +15,11 @@ class ExplorePage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 70,),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 220, 5),
-            child: Image.asset("assets/images/nolly_icon.png",
-              height: 50,),
-          ),
-          SizedBox(height: 20,),
-          Image.asset("assets/images/nolly_frame.png"),
-          SizedBox(height: 30,),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Text("For actors, director, and \n  "
-                 "everyone in-between",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold
-            ),
-            ),
-
-
-          ),
+          NollyIcon(),
           SizedBox(height: 10,),
+          Image.asset("assets/images/nolly_frame.png"),
+          SizedBox(height: 10,),
+          NollyInfo(),
           Row(
             children: [
               Expanded(
@@ -60,9 +48,17 @@ class ExplorePage extends StatelessWidget {
               )
             ],
           ),
-
+          SizedBox(height: 10,),
+          ExploreActorButton(),
+          SizedBox(height: 10,),
+          ExploreProducerBtn(),
+         SizedBox(height: 20,),
+          Image.asset("assets/images/home indicator2.png",),
         ],
       ),
+
+
     );
   }
 }
+

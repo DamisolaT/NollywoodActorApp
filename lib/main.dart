@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nollywood_actor_app/Nollywood/Discover/page/discover_page.dart';
 import 'package:nollywood_actor_app/Nollywood/Explore/page/explore_page.dart';
 import 'package:nollywood_actor_app/Nollywood/Home/page/home_page.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:ExplorePage(),
+      home:DiscoverPage(),
     );
   }
 }
