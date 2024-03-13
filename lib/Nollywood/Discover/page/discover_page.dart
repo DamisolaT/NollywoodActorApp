@@ -13,16 +13,28 @@ class DiscoverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          //topSection,
-          topSection,
-          // Middle section
-          middleSection,
-          //botton section
-          BottomToolbar()
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          image: DecorationImage(
+            image: AssetImage("assets/images/Image_discover.png"),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Column(
+          children: [
+            //topSection,
+            topSection,
+            // Middle section
+            middleSection,
+            //botton section
+            BottomToolbar(),
+
+          ],
+        ),
       ),
+
     );
+
   }
 }

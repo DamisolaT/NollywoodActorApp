@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:nollywood_actor_app/Nollywood/Discover/page/discover_page.dart';
 
 class ExploreActorButton extends StatelessWidget {
   const ExploreActorButton({
@@ -9,7 +10,11 @@ class ExploreActorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context)=> DiscoverPage()));
+      },
       child: Container(
         width: MediaQuery.of(context).size.width*0.85,
         padding: EdgeInsets.symmetric(vertical: 18),

@@ -52,7 +52,7 @@ class ExplorePage extends StatelessWidget {
           ExploreActorButton(),
           SizedBox(height: 10,),
           ExploreProducerBtn(),
-         SizedBox(height: 20,),
+          SizedBox(height: 20,),
           Image.asset("assets/images/home indicator2.png",),
         ],
       ),
