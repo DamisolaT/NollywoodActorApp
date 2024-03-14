@@ -9,9 +9,16 @@ class NollyIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 20, 220, 5),
-      child: Image.asset("assets/images/nolly_icon.png",
-        height: 40,),
+      padding: const EdgeInsets.fromLTRB(15, 0, 0, 0 ),
+     // padding: EdgeInsets.only(top: 57.9, left: 22.53),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Image.asset("assets/images/nolly_icon.png",
+          height: 48.95,
+        width: 64,
+
+      ),
+      )
     );
   }
 }

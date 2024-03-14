@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:nollywood_actor_app/Nollywood/Explore/page/explore_page.dart';
+import 'package:nollywood_actor_app/Nollywood/Home/page/home_page.dart';
 
 class BottomToolbar extends StatelessWidget {
   const BottomToolbar({super.key});
@@ -15,10 +17,19 @@ class BottomToolbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:[
-            Image.asset("assets/images/Icon1.png",
-              color: Colors.black,
-                 width: NavigationIconSize,
-                 height: NavigationIconSize,
+            //Navigating back to homepage
+            GestureDetector(
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ExplorePage())
+                );
+              },
+              child: Image.asset("assets/images/Icon1.png",
+                color: Colors.black,
+                   width: NavigationIconSize,
+                   height: NavigationIconSize,
+              ),
             ),
             Image.asset("assets/images/Icon2.png",
               color: Colors.grey,
@@ -34,7 +45,7 @@ class BottomToolbar extends StatelessWidget {
               width: NavigationIconSize,
               height: NavigationIconSize,
             ),
-            Image.asset("assets/images/people1.png",
+            Image.asset("assets/images/people.png",
               color: Colors.grey,
               width: NavigationIconSize,
               height: NavigationIconSize,

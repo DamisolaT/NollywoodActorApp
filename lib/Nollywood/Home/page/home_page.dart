@@ -8,19 +8,37 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  bool isLoading = true;
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
-    //Delayed
-    Future.delayed(Duration(seconds: 10), (){
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => ExplorePage()),
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 5),
+    )..repeat();
+
+    // Delayed navigation
+    Future.delayed(Duration(seconds: 5), () {
+      setState(() {
+        isLoading = false;
+      });
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ExplorePage()),
       );
     });
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +54,34 @@ class _HomePageState extends State<HomePage> {
               height: 250,
             ),
           ),
-
-             Padding(
-              padding: const EdgeInsets.fromLTRB(25, 200, 25, 10),
-              child: Image.asset("assets/images/loader_icon.png", height: 50),
+          if (isLoading)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
+              child: _buildLoadingIcon(),
             ),
-
-          Image.asset("assets/images/home indicator.png", height: 50),
+          if (!isLoading)
+            Padding(
+              padding: const EdgeInsets.all(50),
+              child: Image.asset("assets/images/loader_icon.png", height: 70),
+            ),
         ],
       ),
+    );
+  }
+
+  Widget _buildLoadingIcon() {
+    return Column(
+      children: [
+        RotationTransition(
+          turns: _controller,
+          child: Image.asset(
+            "assets/images/loader_icon.png",
+            height: 70,
+          ),
+        ),
+
+
+      ],
     );
   }
 }

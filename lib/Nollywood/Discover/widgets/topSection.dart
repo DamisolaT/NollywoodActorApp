@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 
 Widget get topSection => Container(
-  height: 90.0,
-  padding: EdgeInsets.only(bottom: 15.0),
+  height: 120.0,
+  padding: EdgeInsets.only(bottom: 15.0, left: 20),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
         Text("Discover",
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.white
           ),
@@ -18,7 +18,7 @@ Widget get topSection => Container(
 
       Spacer(),
       Icon(Icons.search,
-      size: 24.0,
+      size: 25.0,
       color: Colors.white,)
     ],
   ),
