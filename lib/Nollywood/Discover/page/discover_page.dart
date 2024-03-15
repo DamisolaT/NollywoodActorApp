@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:nollywood_actor_app/Nollywood/Discover/widgets/BottomToolbar.dart';
-import 'package:nollywood_actor_app/Nollywood/Discover/widgets/bottomSection.dart';
 import 'package:nollywood_actor_app/Nollywood/Discover/widgets/middleSection.dart';
 import 'package:nollywood_actor_app/Nollywood/Discover/widgets/topSection.dart';
 class DiscoverPage extends StatelessWidget {
@@ -17,20 +16,23 @@ class DiscoverPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           image: DecorationImage(
-            image: AssetImage("assets/images/Image_discover.png"),
-            fit: BoxFit.cover
+            image: AssetImage("assets/images/Image_discover.png",),
+            fit:BoxFit.fitHeight
           )
         ),
-        child: Column(
-          children: [
-            //topSection,
-            topSection,
-            // Middle section
-            middleSection,
-            //botton section
-            BottomToolbar(),
+        child: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Column(
+            children: [
+              //topSection,
+              topSection,
+              // Middle section
+              middleSection,
+              //botton section
+              BottomToolbar(),
 
-          ],
+            ],
+          ),
         ),
       ),
 

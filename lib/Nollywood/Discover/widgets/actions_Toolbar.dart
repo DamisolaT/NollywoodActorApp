@@ -12,7 +12,7 @@ class ActionsToolbar extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 15.0),
       width: 70,
-      height: 70,
+      height: 60,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,
@@ -31,8 +31,6 @@ class ActionsToolbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100.0,
-
-
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children:[

@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(100, 250, 100, 10),
+            padding: const EdgeInsets.fromLTRB(100, 150, 100, 10),
             child: Image.asset(
               "assets/images/nollywood_icon.png",
               height: 250,
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ),
           if (isLoading)
             Padding(
-              padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
+              padding: const EdgeInsets.fromLTRB(55, 100, 55, 100),
               child: _buildLoadingIcon(),
             ),
           if (!isLoading)
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           turns: _controller,
           child: Image.asset(
             "assets/images/loader_icon.png",
-            height: 70,
+            height: 50,
           ),
         ),
 
